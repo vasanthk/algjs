@@ -11,7 +11,12 @@
 function binarySearch(items, value) {
   var startIndex = 0,
     stopIndex = items.length - 1,
-    middle = Math.floor((stopIndex + startIndex) / 2);
+    middle = Math.floor((startIndex + stopIndex) / 2);
+    // Alternative to Math.floor((a + b) / 2);
+    // Right shift bitwise operator
+    // middle = ((startIndex + stopIndex) >> 1);
+    // or
+    // middle = ~~((startIndex + stopIndex) / 2);
 
   while (items[middle] != value && startIndex < stopIndex) {
 
