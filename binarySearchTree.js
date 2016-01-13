@@ -3,6 +3,7 @@
  *
  * @Reference:
  * https://productbuilder.wordpress.com/2013/09/06/building-a-binary-search-tree-in-javascript/
+ * http://codereview.stackexchange.com/questions/31513/linkedlist-and-binary-search-tree-in-javascript
  */
 
 function Node(name, value) {
