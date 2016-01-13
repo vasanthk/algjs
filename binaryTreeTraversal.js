@@ -9,6 +9,16 @@
  *
  * Postorder
  * <left> <right> <root>
+ *
+ *
+ * @Reference:
+ * Preorder, Inorder, Postorder: https://www.youtube.com/watch?v=gm8DUJJhmY4
+ * http://khan4019.github.io/front-end-Interview-Questions/bst.html
+ * http://www.java2s.com/Tutorials/Javascript/Javascript_Data_Structure/0420__Javascript_Binary_Tree.htm
+ * http://codereview.stackexchange.com/questions/31513/linkedlist-and-binary-search-tree-in-javascript
+ * https://www.nczonline.net/blog/2009/06/09/computer-science-in-javascript-binary-search-tree-part-1/
+ * https://productbuilder.wordpress.com/2013/09/06/building-a-binary-search-tree-in-javascript/
+ * https://gist.github.com/trevmex/821973
  */
 
 /**
