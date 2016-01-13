@@ -10,6 +10,12 @@
  * Postorder
  * <left> <right> <root>
  *
+ * Time Complexity: O(n)
+ * Space Complexity:
+ * O(h) --> height or the tree
+ * Worst: O(n-1) ~ O(n)
+ * Best/Average: O(log n)
+ *
  *
  * @Reference:
  * Preorder, Inorder, Postorder: https://www.youtube.com/watch?v=gm8DUJJhmY4
