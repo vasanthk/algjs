@@ -1,6 +1,12 @@
 /**
  * Devise an algorithm to find the lowest common ancestor of a binary search tree, given two nodes.
  * You may assume that both nodes are members of the tree.
+ *
+ * Time Complexity: O(log n)
+ *
+ * @Reference:
+ * https://github.com/malachaifrazier/JavaScript-Interview-Questions/blob/master/trees/008.js
+ * http://www.geeksforgeeks.org/lowest-common-ancestor-in-a-binary-search-tree/
  */
 
 // Typical Binary tree node.
@@ -29,7 +35,7 @@ var root = new Node(
 );
 
 // Find lowest common ancestor
-function findLowestCommonAncesto(root, value1, value2) {
+function findLowestCommonAncestor(root, value1, value2) {
   var current = root;
   var value = null;
 
