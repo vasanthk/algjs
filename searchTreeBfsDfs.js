@@ -109,7 +109,7 @@ BinarySearchTree.prototype.breadthFirstTraversal = function () {
     queue.push(current);
   }
 
-  // start off enqueing root
+  // start off enqueuing root
   while (queue.length > 0) {
     var tempNode = queue.shift();
     console.log(tempNode.value); // Visit current node
