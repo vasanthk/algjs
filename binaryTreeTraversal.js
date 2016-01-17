@@ -52,7 +52,7 @@ child2.left = grandchild3;
 child2.right = grandchild4;
 
 // pre-order traversal
-// visit current node befoe child nodes
+// visit current node before child nodes
 var preOrderTraversal = function (node) {
   if (node !== null) {
     console.log(node.value);
