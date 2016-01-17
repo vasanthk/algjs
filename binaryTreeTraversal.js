@@ -90,6 +90,29 @@ var postOrderTraversal = function (node) {
 console.log('post order traversal');
 postOrderTraversal(root);
 
+
+// Is the tree rooted at x a BST with all values strictly between min and max
+// (if min or max is null, treat as empty constraint)
+var isBinarySearchTree = function (node, min, max) {
+  if (node === null) {
+    return true;
+  }
+
+  if (min !== null && node.value < min) {
+    return false;
+  }
+
+  if (max !== null && node.value > max) {
+    return false;
+  }
+
+  return isBinarySearchTree(node.left, min, node.value) &&
+    isBinarySearchTree(node.right, node.value, max);
+};
+
+console.log('Is it a Binary search tree?');
+postOrderTraversal(root);
+
 /*
  *  DETAILED VERSION
  *
