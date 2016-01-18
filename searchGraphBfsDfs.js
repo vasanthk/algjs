@@ -5,6 +5,8 @@
  * Note: For an undirected graph, the adjacency matrix is symmetric. For a directed graph, the adjacency matrix need not be symmetric.
  * https://www.khanacademy.org/computing/computer-science/algorithms/graph-representation/a/representing-graphs
  *
+ * Time complexity: O(|V|^2)
+ *
  * @Reference:
  * https://mgechev.github.io/javascript-algorithms/module-graphs_searching_bfs.html
  * https://mgechev.github.io/javascript-algorithms/module-graphs_searching_dfs.html
