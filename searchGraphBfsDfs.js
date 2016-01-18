@@ -10,6 +10,10 @@
  * @Reference:
  * https://mgechev.github.io/javascript-algorithms/module-graphs_searching_bfs.html
  * https://mgechev.github.io/javascript-algorithms/module-graphs_searching_dfs.html
+ *
+ * @Videos:
+ * DFS: https://class.coursera.org/algo-003/lecture/51
+ * BFS: https://class.coursera.org/algo-003/lecture/50
  */
 
 
