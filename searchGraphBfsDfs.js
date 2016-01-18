@@ -13,7 +13,7 @@
 (function (exports) {
   var bfs = (function () {
 
-    // Build path from targetNode all the way up to the root.
+    // Build path from targetNode all the way up to the start node.
     function _buildPath(parents, targetNode) {
       var result = [];
       result.unshift(targetNode);
@@ -38,10 +38,13 @@
       visited[startNode] = true;
 
       while (queue.length) {
+        // Get the current node and check all it's direct immediate connections.
         current = queue.shift();
+        // Finally when the targetNode is reached, build the path to the start node.
         if (current === targetNode) {
           return _buildPath(parents, targetNode);
         }
+        // Push all nodes immediately connected to the current node (Breadth-first)
         for (var i = 0; i < graph.length; i++) {
           if (i !== current && graph[current][i] && !visited[i]) {
             parents[i] = current;
@@ -60,10 +63,12 @@
 
 // OUTPUT
 //
-// var graph = [[1, 1, 0, 0, 1, 0],
+// var graph = [
+//  [1, 1, 0, 0, 1, 0],
 //  [1, 0, 1, 0, 1, 0],
 //  [0, 1, 0, 1, 0, 0],
 //  [0, 0, 1, 0, 1, 1],
 //  [1, 1, 0, 1, 0, 0],
-//  [0, 0, 0, 1, 0, 0]];
+//  [0, 0, 0, 1, 0, 0]
+// ];
 // console.log(bfs(graph, 1, 5)); // [1, 2, 3, 5]
