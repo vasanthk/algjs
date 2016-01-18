@@ -12,6 +12,8 @@
  * https://mgechev.github.io/javascript-algorithms/module-graphs_searching_dfs.html
  */
 
+
+// BREADTH FIRST SEARCH
 (function (exports) {
   var bfs = (function () {
 
@@ -74,3 +76,54 @@
 //  [0, 0, 0, 1, 0, 0]
 // ];
 // console.log(bfs(graph, 1, 5)); // [1, 2, 3, 5]
+
+
+// DEPTH FIRST SEARCH
+
+(function (exports) {
+
+  var dfs = (function () {
+    function _hasPath(graph, current, goal) {
+      var stack = [];
+      var visited = [];
+      var node;
+
+      stack.push(current);
+      visited[current] = true;
+
+      while (stack.length) {
+        node = stack.pop();
+        if (node === goal) {
+          return true;
+        }
+
+        for (var i = 0; i < graph[node].length; i++) {
+          if (graph[node][i] && !visited[i]) {
+            stack.push(i);
+            visited[i] = true;
+          }
+        }
+      }
+      return false;
+    }
+
+    return function (graph, start, goal) {
+      return _hasPath(graph, start, goal);
+    };
+  })();
+
+  exports.dfs = dfs;
+})((typeof window === 'undefined') ? module.exports : window);
+
+
+// OUTPUT
+//
+// var graph = [
+//              [1, 1, 0, 0, 1, 0],
+//              [1, 0, 1, 0, 1, 0],
+//              [0, 1, 0, 1, 0, 0],
+//              [0, 0, 1, 0, 1, 1],
+//              [1, 1, 0, 1, 0, 0],
+//              [0, 0, 0, 1, 0, 0]
+//             ];
+// console.log(dfs(graph, 1, 5)); // true
