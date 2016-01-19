@@ -49,3 +49,55 @@ function Node(value) {
   this.value = value;
   this.adjacents = []
 }
+
+// SOLUTION 2
+// Using recursion
+
+var nodes = {}; // Contains all nodes in the graph
+
+// Constructor for adding nodes to the graph
+var Node = function (value, edges) {
+  nodes[value] = {
+    value: value,
+    edges: edges
+  };
+  return nodes[value];
+};
+
+// a and b are of type Node
+// Find out if there is a route from a to b
+var getRoute = function (a, b) {
+  var hasRoute = false;
+  var visited = [];
+
+  function recurse(node) {
+    visited.push(node);
+    if (node.value === b.value) {
+      hasRoute = true;
+      return;
+    }
+
+    if (node.edges) {
+      for (var i = 0; i < node.edges.length; i++) {
+        if (visited.indexOf(node.edges[i].value) === -1) {
+          recurse(node.edges[i]);
+        }
+      }
+    }
+  }
+
+  recurse(a);
+  return hasRoute;
+};
+
+
+// ES6 version of Solution 2
+var nodes = {};
+var Node = (value, edges) => nodes[value] = {value: value, edges: edges};
+var getRoute = function (a, b, found = []) {
+  return a.edges == null ? false : a.edges.some(n => {
+    if (found.indexOf(n) > -1) return false;
+    found.push(n);
+    return n == b || getRoute(n, b, found);
+  });
+};
