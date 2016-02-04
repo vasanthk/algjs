@@ -40,6 +40,7 @@ function merge(a, b) {
     }
   }
 
+  // Adds in the remaining elements from the larger array.
   arr = arr.concat(a.slice(a_index)).concat(b.slice(b_index));
 
   return arr;
