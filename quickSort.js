@@ -8,10 +8,12 @@
  *
  * Space Complexity (Worst): O(nlogn)
  *
+ * @Reference:
+ * https://github.com/chihungyu1116/interview_sols_javascript/blob/master/algorithm/sort_quick_sort.js
  */
 
 function quick_sort(arr) {
-  return quick_sort_helper(arr, 0, arr.length - 1);
+  console.log('Sorted Array: ', quick_sort_helper(arr, 0, arr.length - 1));
 }
 
 function quick_sort_helper(arr, left, right) {
@@ -21,6 +23,7 @@ function quick_sort_helper(arr, left, right) {
 
   quick_sort_helper(arr, left, pivot - 1);
   quick_sort_helper(arr, pivot + 1, right);
+  return arr;
 }
 
 function partition(arr, left, right) {
@@ -54,4 +57,3 @@ function swap(arr, left, right) {
 
 x = [1, 2, 3, 8, 3, 4, 6, 8, 1, 1, 1, 2];
 quick_sort(x);
-console.log('Sorted Array', x);
