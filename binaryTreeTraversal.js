@@ -1,5 +1,5 @@
 /**
- * Binary Tree traversal
+ * Binary Tree traversal (Depth first traversal)
  *
  * Preorder
  * <root> <left> <right>
@@ -25,6 +25,7 @@
  * https://www.nczonline.net/blog/2009/06/09/computer-science-in-javascript-binary-search-tree-part-1/
  * https://productbuilder.wordpress.com/2013/09/06/building-a-binary-search-tree-in-javascript/
  * https://gist.github.com/trevmex/821973
+ * http://stackoverflow.com/a/31931931/1672655
  */
 
 /**
@@ -110,8 +111,9 @@ var isBinarySearchTree = function (node, min, max) {
     isBinarySearchTree(node.right, node.value, max);
 };
 
-console.log('Is it a Binary search tree?');
-postOrderTraversal(root);
+// console.log('Is it a Binary search tree?');
+// isBinarySearchTree(root, 1, 8);
+// true
 
 /*
  *  DETAILED VERSION
