@@ -27,7 +27,7 @@ function insertNode(tree, node) {
       if (tree.right) {
         insertNode(tree.right, node)
       } else {
-        insertNode(tree.left, node);
+        tree.setRight(node);
       }
     } else {
       if (tree.left) {
