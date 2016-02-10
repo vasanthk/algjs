@@ -13,23 +13,23 @@
  * http://khan4019.github.io/front-end-Interview-Questions/sort.html#quickSort
  */
 
-function quick_sort(arr) {
-  console.log('Sorted Array: ', quick_sort_helper(arr, 0, arr.length - 1));
+function quickSort(arr) {
+  console.log('Sorted Array: ', quickSortHelper(arr, 0, arr.length - 1));
 }
 
-function quick_sort_helper(arr, left, right) {
+function quickSortHelper(arr, left, right) {
   if (left >= right) return;
 
   var pivot = partition(arr, left, right);
 
-  quick_sort_helper(arr, left, pivot - 1);
-  quick_sort_helper(arr, pivot + 1, right);
+  quickSortHelper(arr, left, pivot - 1);
+  quickSortHelper(arr, pivot + 1, right);
   return arr;
 }
 
 function partition(arr, left, right) {
-  var pivot = left,
-    pivot_value = arr[pivot];
+  var pivot = left;
+  var pivot_value = arr[pivot];
 
   while (left < right) {
     while (arr[left] <= pivot_value) {
@@ -57,4 +57,4 @@ function swap(arr, left, right) {
 }
 
 x = [1, 2, 3, 8, 3, 4, 6, 8, 1, 1, 1, 2];
-quick_sort(x);
+quickSort(x);
