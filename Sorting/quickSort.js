@@ -10,6 +10,7 @@
  *
  * @Reference:
  * https://github.com/chihungyu1116/interview_sols_javascript/blob/master/algorithm/sort_quick_sort.js
+ * http://khan4019.github.io/front-end-Interview-Questions/sort.html#quickSort
  */
 
 function quick_sort(arr) {
