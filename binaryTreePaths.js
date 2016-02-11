@@ -36,7 +36,7 @@ function printAllPaths(node, path) {
     return null;
   }
 
-  path.push(node.data);
+  path.push(node.value);
   var left = this.printAllPaths(node.left, path),
     right = this.printAllPaths(node.right, path);
 
