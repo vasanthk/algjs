@@ -5,7 +5,7 @@
  * https://github.com/lanocturne/es6/blob/master/js/mergeKSorted.js
  */
 var mergeKLists = function (lists) {
-  return lists.reduce(mergeSorted);
+  return lists.reduce(mergeSorted, []);
 };
 
 var lists = [
@@ -14,33 +14,22 @@ var lists = [
   [0, 2, 8]
 ];
 
-function mergeSorted(a, b) {
-
+function mergeSorted(merged, curr) {
   var answer = [],
     i = 0,
     j = 0;
 
-  while (i < a.length && j < b.length) {
-    if (a[i] < b[j]) {
-      answer.push(a[i]);
+  while (i < merged.length && j < curr.length) {
+    if (merged[i] < curr[j]) {
+      answer.push(merged[i]);
       i++;
     } else {
-      answer.push(b[j]);
+      answer.push(curr[j]);
       j++;
     }
-
   }
-  while (i < a.length) {
-    answer.push(a[i]);
-    i++;
 
-  }
-  while (j < b.length) {
-    answer.push(b[j]);
-    j++;
-
-  }
-  return answer;
+  return answer.concat(merged.slice(i)).concat(curr.slice(j));
 }
 
 console.log(mergeKLists(lists));
