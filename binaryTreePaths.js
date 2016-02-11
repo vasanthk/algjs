@@ -37,13 +37,16 @@ function printAllPaths(node, path) {
   }
 
   path.push(node.value);
-  var left = this.printAllPaths(node.left, path),
-    right = this.printAllPaths(node.right, path);
+  var left = this.printAllPaths(node.left, path);
+  var right = this.printAllPaths(node.right, path);
 
   if (left === null && right === null) {
     console.log(path);
   }
-  path.pop(); // this part ensures that parts of other paths don't get added
+  // this part ensures that
+  // 1) When the leaf node has been added to the paths -- pop() the current leaf node.
+  // 2) When subtree below this node has already been added to paths -- pop() the current node.
+  path.pop();
 }
 
 // printAllPaths(root, [])
