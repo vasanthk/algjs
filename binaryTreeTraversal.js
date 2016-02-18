@@ -176,7 +176,7 @@ TRVSL.TreeNode = function () {
    * In level order every node on the same level are visited at a time.
    */
   this.levelorder = function () {
-    var queue = new Array();
+    var queue = [];
     queue.push(this);
     while (queue.length > 0) {
       var node = queue.shift();
