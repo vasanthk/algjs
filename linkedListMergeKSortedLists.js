@@ -8,12 +8,6 @@ var mergeKLists = function (lists) {
   return lists.reduce(mergeSorted, []);
 };
 
-var lists = [
-  [1, 4, 5, 8, 9],
-  [3, 4, 4, 6],
-  [0, 2, 8]
-];
-
 function mergeSorted(merged, curr) {
   var answer = [],
     i = 0,
@@ -31,5 +25,12 @@ function mergeSorted(merged, curr) {
 
   return answer.concat(merged.slice(i)).concat(curr.slice(j));
 }
+
+// Input
+var lists = [
+  [1, 4, 5, 8, 9],
+  [3, 4, 4, 6],
+  [0, 2, 8]
+];
 
 console.log(mergeKLists(lists));
