@@ -92,6 +92,29 @@ console.log('post order traversal');
 postOrderTraversal(root);
 
 
+// level order traversal
+// visit current level nodes before next level
+var levelOrderTraversal = function(node) {
+  var currNode = node;
+  var queue = [];
+
+  while(currNode !== undefined) {
+    console.log(currNode.value);
+    if(currNode.left) {
+      queue.push(currNode.left);
+    }
+
+    if(currNode.right) {
+      queue.push(currNode.right);
+    }
+
+    currNode = queue.shift();
+  }
+};
+
+console.log('level order traversal');
+levelOrderTraversal(root);
+
 /*
  *  DETAILED VERSION
  *
