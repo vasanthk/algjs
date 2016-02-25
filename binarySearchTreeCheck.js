@@ -5,22 +5,22 @@
  * https://github.com/jokomo/moretoyproblems/blob/master/binary-search-tree-check.js
  */
 
-function checkBST(bst) {
+function checkBST(root) {
   //max is the constraint on the left side of the tree
-  function checkTree(bst, min, max) {
-    if (!bst) {
+  function checkTree(node, min, max) {
+    if (!node) {
       return true;
     }
 
-    if (bst.value > max || bst.value <= min) {
+    if (node.value > max || node.value <= min) {
       return false;
     }
 
-    if (!checkTree(bst.left, min, bst.value) || !checkTree(bst.right, bst.value, max)) {
+    if (!checkTree(node.left, min, node.value) || !checkTree(node.right, node.value, max)) {
       return false;
     }
     return true;
   }
 
-  return checkTree(bst, Number.MIN_VALUE, Number.MAX_VALUE);
+  return checkTree(root, Number.MIN_VALUE, Number.MAX_VALUE);
 }
