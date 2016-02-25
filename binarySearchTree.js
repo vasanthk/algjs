@@ -6,8 +6,7 @@
  * http://codereview.stackexchange.com/questions/31513/linkedlist-and-binary-search-tree-in-javascript
  */
 
-function Node(name, value) {
-  this.name = name;
+function Node(value) {
   this.value = value;
 }
 
@@ -42,28 +41,8 @@ function insertNode(tree, node) {
   return tree;
 }
 
-// TESTING THE BST
-function setup() {
-  var nodeA = new Node('a', 5);
-  var nodeB = new Node('b', 12);
-  var nodeC = new Node('c', 10);
-  var nodeD = new Node('d', 15);
-  var nodeE = new Node('e', 20);
-  var nodeF = new Node('f', 25);
-  var nodeG = new Node('g', 8);
-  var nodeH = new Node('h', 3);
-
-  var tree = insertNode(tree, nodeA);
-  tree = insertNode(tree, nodeB);
-  tree = insertNode(tree, nodeC);
-  tree = insertNode(tree, nodeD);
-  tree = insertNode(tree, nodeE);
-  tree = insertNode(tree, nodeF);
-  tree = insertNode(tree, nodeG);
-  tree = insertNode(tree, nodeH);
-}
-
 function printTreeAsc(root) {
+  // Same as in order traversal
   var currNode = root;
   if (currNode.left) {
     printTreeAsc(currNode.left);
@@ -76,22 +55,22 @@ function printTreeAsc(root) {
   }
 }
 
+
+// CREATE BST
+var arr = [1, 3, 7, 2, 23, 6];
+var tree;
+
+arr.forEach(function (num) {
+  tree = insertNode(tree, new Node(num));
+});
+
+printTreeAsc(tree);
+
 //  OUTPUT
 //
+//  1
+//  2
 //  3
-//  5
-//  8
-//  10
-//  12
-//  15
-//  20
-//  25
-
-// How tall is my BST
-function calcHeight(node) {
-  if (node) {
-    return 1 + Math.max(calcHeight(node.left), calcHeight(node.right));
-  } else {
-    return 0;
-  }
-}
+//  6
+//  7
+//  23
