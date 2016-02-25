@@ -19,6 +19,8 @@ function mergeSort(arr) {
   }
 
   var middle = parseInt(arr.length / 2);
+
+  // Error Zone: Make sure to slice and send the sub arrays.
   var left = arr.slice(0, middle);
   var right = arr.slice(middle);
 
