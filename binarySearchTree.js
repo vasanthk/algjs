@@ -41,6 +41,33 @@ function insertNode(tree, node) {
   return tree;
 }
 
+// http://stackoverflow.com/a/27812601/1672655
+function removeNode(tree, node) {
+  if (tree) {
+    if (node.value < tree.value) {
+      removeNode(tree.left, node);
+    } else if (node.value > tree.value) {
+      removeNode(tree.right, node);
+    } else if (node.value === tree.value) {
+      if (node.left && node.right) {
+        var minNode = findMinVal(node.right);
+
+        node.value = minNode.value;
+        node.right = removeNode(node.right, minNode);
+      } else {
+        node = node.left || node.right;
+      }
+    }
+    return node;
+  } else {
+    return false;
+  }
+}
+
+function findMinVal(node) {
+  return node.left ? findMinVal(node.left) : node;
+}
+
 function printTreeAsc(root) {
   // Same as in order traversal
   var currNode = root;
