@@ -4,6 +4,7 @@
  * @Reference:
  * https://productbuilder.wordpress.com/2013/09/06/building-a-binary-search-tree-in-javascript/
  * http://codereview.stackexchange.com/questions/31513/linkedlist-and-binary-search-tree-in-javascript
+ * http://www.thecodingdelight.com/binary-search-tree-implementation-javascript/
  */
 
 function Node(value) {
